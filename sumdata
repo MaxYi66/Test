@@ -1,0 +1,24 @@
+def addData(array, sumdata):
+   
+    temp_array = array
+    temp_sumdata = sumdata
+    print "sumdata: %d" %temp_sumdata
+
+      
+    sorted(temp_array)
+    
+    len_temp_array = len(temp_array)
+
+    num = 0
+    
+    for i in range(0, len_temp_array-1):
+        for j in range(i+1, len_temp_array):
+            if temp_array[i] + temp_array[j] < temp_sumdata:
+                continue
+            elif temp_array[i] + temp_array[j] == temp_sumdata:
+                num += 1
+                print "Group %d :" % num
+                print "下标：%d, 元素值： %d" %(i, temp_array[i])
+                print "下标：%d, 元素值： %d" %(j, temp_array[j])
+            else:
+                break
